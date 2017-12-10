@@ -1,0 +1,96 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="content">
+    <select asp-for="GroupId" asp-items="@Model.Groups">
+        <option>Please select your group</option>
+    </select>
+
+    @if (Model.GroupId != null)
+    {
+        <div>
+            <h2>
+                Participants:
+            </h2>
+        </div>
+
+        <div>
+
+            <ul class="participants-list">
+                @foreach (var participant in Model.Participants)
+                {
+                    <li data-id="@participant.ParticipantId">
+                        <span onclick="onUserChanged(this)">
+                            @participant.User.UserName
+                        </span>
+                        <div style="display: none;" class="letter">
+                            @participant.LetterText
+                        </div>
+                    </li>
+                }
+
+            </ul>
+
+            @*<div class="col-lg-9">
+                    <ul class="letters">
+                        @foreach (var participant in Model.Participants)
+                        {
+                            <li data-id="@participant.ParticipantId" style="display: none;">
+                                @participant.LetterText
+                            </li>
+                        }
+                    </ul>
+                </div>*@
+
+        </div>
+
+        <div>
+            <h2>
+                Your letter to Secret Santa
+            </h2>
+
+            <form asp-controller="Home" asp-action="SubmitLetter">
+                <input type="hidden" asp-for="CurrentParticipantId" />
+                <textarea asp-for="LetterText"></textarea>
+                <div>
+                    <button type="submit" class="btn btn-default">Save</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+    }
+
+</div>
+
+
+@section Scripts{ 
+<script>
+
+    //function onUserChanged(el) {
+    //    //$("ul.participants-list li").removeClass("selected");
+
+    //    var id = $(el).attr("data-id");
+    //    $("ul.letters li").hide();
+    //    $("ul.letters li[data-id=" + id + "]").show();
+    //    $(el).addClass("selected");
+    //}
+
+    function onUserChanged(el) {
+        $("div.letter").slideUp("fast");
+        if ($(el).siblings("div.letter:visible").length === 0)
+        {
+            $(el).siblings("div.letter").slideDown("fast");
+        }
+    }
+
+</script>
+
+}
+

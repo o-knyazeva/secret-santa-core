@@ -1,0 +1,121 @@
+﻿body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+
+nav.navbar a
+{
+    color: #888888;
+}
+
+nav.navbar a:hover
+{
+    color: #000000;
+}
+
+nav.navbar a.navbar-brand
+{
+    font-family: 'Lobster', cursive;
+    font-size: 60px;
+    color: darkred;
+}
+
+    nav.navbar a.navbar-brand:hover
+    {
+        color: darkred;
+    }
+
+div.content
+{
+    border-top: 2px solid #888888;
+    padding-top: 20px;
+}
+
+select
+{
+    padding: 8px 12px;
+    font-size: 20px;
+    border: none;
+    font-family: 'Special Elite', cursive;
+}
+
+h2
+{
+    font-family: 'Special Elite', cursive;
+    color: #113743;
+}
+
+ul.participants-list
+{
+}
+
+    ul.participants-list li
+    {
+        list-style: none;
+    }
+    
+    ul.participants-list li span
+    {
+        font-size: 16px;
+        padding: 6px 10px;
+        cursor: pointer;
+        margin: 5px;
+        display: inline-block;
+        
+    }
+
+    ul.participants-list div.letter
+    {
+        margin: 0 40px;
+        padding: 15px;
+        border: 1.5px dashed #888888;
+    }
+
+
+textarea
+{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Kalam', cursive;
+    background-color: #e4e3db;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+    margin-bottom: 20px;
+}
+
+textarea:focus
+{
+    outline-color: #888888;
+}
