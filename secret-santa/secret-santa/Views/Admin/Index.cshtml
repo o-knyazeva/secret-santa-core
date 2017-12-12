@@ -1,0 +1,22 @@
+﻿@model AdminViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-controller="Admin" asp-action="DrawNames">
+    <input type="hidden" asp-for="GroupId"/>
+    <select asp-for="GroupId" asp-items="@Model.Groups">
+        <option>Please select your group</option>
+    </select>
+
+    <button type="submit" class="btn btn-default">Draw names</button>
+</form>
+
+<div>
+    Result: 
+    <hr />
+    @Html.Raw(Model.ResultMessage)
+</div>
+

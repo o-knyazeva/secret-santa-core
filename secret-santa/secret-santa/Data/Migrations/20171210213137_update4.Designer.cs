@@ -11,9 +11,10 @@ using System;
 namespace SecretSanta.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171210213137_update4")]
+    partial class update4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,8 +212,6 @@ namespace SecretSanta.Data.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("GroupId");
-
-                    b.Property<int>("HappyKidId");
 
                     b.Property<string>("LetterText");
 

@@ -35,6 +35,7 @@ namespace secret_santa
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<ISantaMagic, SantaMagic>();
 
             services.AddMvc();
         }

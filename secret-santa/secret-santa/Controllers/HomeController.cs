@@ -53,6 +53,8 @@ namespace SecretSanta.Controllers
 
                     var currentParticipant = selectedGroup.Participants.FirstOrDefault(t => t.UserId == userId);
                     model.CurrentParticipantId = currentParticipant?.ParticipantId;
+                    model.HappyKidId = currentParticipant?.HappyKidId;
+
                     model.LetterText = currentParticipant?.LetterText;
                 }
             }

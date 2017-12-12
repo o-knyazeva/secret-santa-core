@@ -13,6 +13,7 @@ namespace SecretSanta.Models.HomeViewModels
         public List<SelectListItem> Groups { get; set; } = new List<SelectListItem>();
         public List<Participant> Participants { get; set; } = new List<Participant>();
         public int? CurrentParticipantId { get; set; }
+        public int? HappyKidId { get; set; }
         public string LetterText { get; set; }
     }
 }

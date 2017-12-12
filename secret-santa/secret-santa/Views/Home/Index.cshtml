@@ -26,9 +26,14 @@
                         <span onclick="onUserChanged(this)">
                             @participant.User.UserName
                         </span>
+                        @if (participant.ParticipantId == Model.HappyKidId)
+                        {
+                            <span class="glyphicon glyphicon-star"></span>
+                        }
                         <div style="display: none;" class="letter">
                             @participant.LetterText
                         </div>
+                       
                     </li>
                 }
 
